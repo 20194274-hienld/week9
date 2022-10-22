@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-font {
+    @apply font-Mulish text-sm font-normal leading-[18px] content-center inline-grid text-primary hover:text-[#253858];
+}
+
+.btn {
+    @apply w-[210px] h-[38px] bg-[#6D4BFF] rounded flex justify-center items-center text-[#FFFFFF] leading-[20px] text-[16px] font-bold;
+}
+
+.btn1 {
+    @apply w-[210px] h-[38px] bg-[#09D0BD] rounded flex justify-center items-center text-[#FFFFFF] leading-[20px] text-[16px] font-bold;
+}
+
+.features-button {
+    @apply font-Mulish uppercase w-[295px] h-[46px] bg-[#6D4BFF] rounded flex justify-center items-center text-[#FFFFFF] leading-[20px] text-[16px] font-bold;
+}
+
+.package-icon {
+    @apply hidden xs:block;
+}
+
+.line-dot {
+    @apply hidden h-[19px] w-[209px] ml-[233px] absolute border-b-[1px] border-dashed sm:block;
+}
+
+.title-package { 
+    @apply whitespace-nowrap uppercase flex justify-center w-[39px] mx-auto pb-2 border-b-[2px] border-[#6D4BFF] font-bold text-sm leading-[18px] text-[#6D4BFF];
+}
+
+.item-block {
+    @apply w-[315px] h-[485px] bg-[#FFFFFF] text-center mt-[50px] border-t-[5px] border-[#6D4BFF] pt-[45px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)] relative;
+}
+
+.title {
+    @apply font-bold text-[48px] leading-[60px] text-[#253858];
+}
+
+.service {
+    @apply flex items-center h-[55px] w-[280px] pl-[30px] text-[#808DA7] font-bold text-[18px] leading-[26px] hover:border-l-[3px] hover:border-[#6D4BFF] hover:pl-[27px] hover:text-[#253858];
+}
+
+.text-footer {
+    @apply font-light text-[14px] leading-[34px] text-[#FFFFFF]
+}
+
+.h-footer {
+    @apply font-bold text-[20px] leading-[25px] text-[#FFFFFF]
+}
+
+.nav-font-features {
+    @apply font-bold text-[14px] leading-[18px] text-[#D7C6FD] hover:text-[#FFFFFF] cursor-pointer
+}
+
+.nav-button-features {
+    @apply font-bold text-[15px] leading-[19px] text-[#FFFFFF];
+}
+
+.text-notification {
+    @apply text-[14px] leading-[22px] text-[#FFFFFF];
+}
+
+.features-h1 {
+    @apply font-bold text-[48px] leading-[60px] mx-auto text-center text-[#253858];
+}
+
+.features-h2 {
+    @apply font-Mulish font-bold text-[28px] leading-10 text-[#253858];
+}
+
+.features-p {
+    @apply font-Mulish font-light text-[18px] leading-7 text-[#253858];
+}
+
+.features-p-highlight {
+    @apply font-Mulish font-bold text-[18px] leading-7 text-[#6D4BFF] ;
+}
+
+.features-ol-section {
+    @apply font-Mulish font-bold text-[20px] leading-[25px] text-[#253858];
+}
+
+.features-button-green {
+    @apply font-Mulish w-[220px] h-[46px] bg-[#09D0BD] rounded flex justify-center items-center text-[#FFFFFF] leading-[20px] text-[16px] font-bold;
+}
+
+.exten-h2 {
+    @apply font-Archivo uppercase font-normal text-[12px] leading-[32px] tracking-[1.5px] text-[#79809B];
+}
+
+.exten-h3 {
+    @apply font-Archivo font-bold text-[16px] leading-[16px] text-[#031B4E] hover:text-[#0266F9];
+}
+
+.extent-h3-mobile {
+    @apply font-Archivo font-bold text-[20px] leading-[22px] text-[#79809B] cursor-pointer;
+}
+
+.extent-h3-mobile-onclick {
+    @apply font-Archivo font-bold text-[20px] leading-[22px] text-[#031B4E] cursor-pointer;
+}
+
+.extent-mobile-button {
+    @apply font-Archivo font-bold text-[16px] leading-[18px];
+}
+
+.exten-h2-blue {
+    @apply font-Archivo uppercase font-normal text-[12px] leading-[32px] tracking-[1.5px] text-[#0266F9];
+}
+
+.exten-p {
+    @apply font-Archivo font-bold text-[16px] leading-[22px] text-[#031B4E];
+}
