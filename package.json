@@ -17,7 +17,12 @@
   "lint-staged": {
     "*.{js,vue}": "eslint --cache",
     "*.{css,scss,sass,html,vue}": "stylelint",
-    "*.**": "prettier --check --ignore-unknown"
+    "*.**": "prettier --check --ignore-unknown",
+    "*.js": [ 
+      "lint:check", 
+      "lint:fix", 
+      "prettier:fix" 
+  ] 
   },
   "dependencies": {
     "core-js": "^3.25.3",
