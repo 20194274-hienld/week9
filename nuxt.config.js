@@ -34,16 +34,33 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/postcss8',
+    
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/tailwindcss',
+    [
+      '@nuxtjs/i18n',
+    ]
+    // '@nuxtjs/i18n',
   ],
-
-  // tailwindcss: {
-  //   jit: true
-  // },
+  i18n: {
+    locales: ['en', 'vi'],
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    vuex: {
+      syncLocale: true
+    },
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: { ...require('./locales/en.js') },
+        vi: { ...require('./locales/vi.js') }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

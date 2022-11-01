@@ -42,12 +42,19 @@
         font-weight: 400;
         src: url('../fonts/Montserrat-Regular.ttf');
     }
-
 }
 
 
 .nav-font {
     @apply font-Mulish text-sm font-normal leading-[18px] content-center inline-grid text-primary hover:text-[#253858];
+}
+
+.nav-font-features {
+    @apply font-bold text-[14px] leading-[18px] text-[#D7C6FD] inline-grid hover:text-[#FFFFFF] cursor-pointer h-full content-center;
+}
+
+b {
+    @apply font-bold;
 }
 
 .btn {
@@ -79,11 +86,11 @@
 }
 
 .title {
-    @apply font-bold text-[48px] leading-[60px] text-[#253858];
+    @apply text-[30px] font-bold leading-[60px] text-[#253858] sm:text-[48px];
 }
 
 .service {
-    @apply flex items-center h-[55px] w-[280px] pl-[30px] text-[#808DA7] font-bold text-[18px] leading-[26px] hover:border-l-[3px] hover:border-[#6D4BFF] hover:pl-[27px] hover:text-[#253858];
+    @apply flex items-center ml-[-3px] h-[55px] w-[280px] pl-[30px] text-[#808DA7] font-bold text-[18px] leading-[26px] hover:border-l-[3px] hover:border-[#6D4BFF] hover:pl-[27px] hover:text-[#253858];
 }
 
 .text-footer {
@@ -94,9 +101,6 @@
     @apply font-bold text-[20px] leading-[25px] text-[#FFFFFF]
 }
 
-.nav-font-features {
-    @apply font-bold text-[14px] leading-[18px] text-[#D7C6FD] hover:text-[#FFFFFF] cursor-pointer
-}
 
 .nav-button-features {
     @apply font-bold text-[15px] leading-[19px] text-[#FFFFFF];
@@ -107,15 +111,15 @@
 }
 
 .features-h1 {
-    @apply font-bold text-[48px] leading-[60px] mx-auto text-center text-[#253858];
+    @apply font-bold text-[25px] leading-[60px] mx-auto text-center text-[#253858] md:text-[48px];
 }
 
 .features-h2 {
-    @apply font-Mulish font-bold text-[28px] leading-10 text-[#253858];
+    @apply font-Mulish text-[20px] font-bold leading-10 text-[#253858] md:text-[28px];
 }
 
 .features-p {
-    @apply font-Mulish font-light text-[18px] leading-7 text-[#253858];
+    @apply mt-[15px] font-Mulish font-light text-[18px] leading-7 text-[#253858];
 }
 
 .features-p-highlight {
