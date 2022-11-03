@@ -1,5 +1,5 @@
 <template>
-  <div id="mobile-nav" class="w-auto px-[25px] pt-[25px] pb-[30px] hidden">
+  <div id="mobile-nav" class="w-auto px-[25px] pt-[25px] pb-[30px]">
     <div class="flex justify-between mb-[50px]">
       <a href="#">
         <img src="../assets/img/Object.svg" class="w-[114px]" />

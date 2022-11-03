@@ -28,7 +28,10 @@
                   alt=""
                 />
               </div>
-              <NuxtLink :to="linkvi">
+              <NuxtLink v-if="$i18n.locale === 'en'" :to="'/vi' + linkPath">
+                <h4 id="vietnamese">Vietnamese</h4>
+              </NuxtLink>
+              <NuxtLink v-else to="linkPath">
                 <h4 id="vietnamese">Vietnamese</h4>
               </NuxtLink>
             </div>
@@ -41,7 +44,10 @@
                   alt=""
                 />
               </div>
-              <NuxtLink :to="linkeng">
+              <NuxtLink v-if="$i18n.locale === 'en'" :to="linkPath">
+                <h4 id="english">English</h4>
+              </NuxtLink>
+              <NuxtLink v-else :to="linkPath.substring(3, linkPath.length)">
                 <h4 id="english">English</h4>
               </NuxtLink>
             </div>
@@ -112,6 +118,7 @@
           class="font-light text-[12px] leading-[15px] text-[#FFFFFF] my-auto"
         >
           Copyright © 2018 CyStack Security. All rights reserved.
+          {{ locale }}
         </div>
       </div>
     </div>
@@ -136,7 +143,7 @@ export default {
     }
   },
   mounted() {
-    this.linkPath = window.location.pathname
+    this.linkPath = window.location.pathname;
     if (this.linkPath.includes('vi')) {
       document.getElementById('vietnamese').classList.add('font-bold')
       document.getElementById('vietnamese-icon').classList.remove('hidden')
@@ -145,5 +152,7 @@ export default {
       document.getElementById('english-icon').classList.remove('hidden')
     }
   },
+
+
 }
 </script>

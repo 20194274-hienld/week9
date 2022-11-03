@@ -8,7 +8,8 @@
           items-center
           justify-between
           h-nav
-          border-b border-linecolor
+          border-b-[1px] border-linecolor
+          z-30
         "
       >
         <div class="flex h-[101%] items-center z-10">
@@ -55,32 +56,48 @@
               >{{ $t('common.more') }}</a
             >
           </div>
-          <div v-else class="hidden md:flex space-x-7 items-center ml-[87px] h-full top-0 bottom-0">
+          <div
+            v-else
+            class="
+              hidden
+              md:flex
+              space-x-7
+              items-center
+              ml-[87px]
+              h-full
+              top-0
+              bottom-0
+            "
+          >
             <!-- Menu Items -->
-            <a 
-              href="#" 
+            <a
+              href="#"
               class="nav-font-features"
               @mouseover="displayElementNav('platform-extent')"
               @mouseleave="hiddenElementNav('platform-extent')"
-              >{{ $t('common.platform') }}</a>
-            <a 
-              href="#" 
+              >{{ $t('common.platform') }}</a
+            >
+            <a
+              href="#"
               class="nav-font-features"
               @mouseover="displayElementNav('apps-extent')"
               @mouseleave="hiddenElementNav('apps-extent')"
-              >{{ $t('common.apps') }}</a>
-            <a 
-              href="#" 
+              >{{ $t('common.apps') }}</a
+            >
+            <a
+              href="#"
               class="nav-font-features"
               @mouseover="displayElementNav('solutions-extent')"
               @mouseleave="hiddenElementNav('solutions-extent')"
-              >{{$t('common.solutions')}}</a>
-            <a 
-              href="#" 
+              >{{ $t('common.solutions') }}</a
+            >
+            <a
+              href="#"
               class="nav-font-features"
               @mouseover="displayElementNav('more-extent')"
               @mouseleave="hiddenElementNav('more-extent')"
-              >{{ $t('common.more') }}</a>
+              >{{ $t('common.more') }}</a
+            >
           </div>
         </div>
 
@@ -113,7 +130,7 @@
         </div>
 
         <!-- Bar button -->
-        <button id="menu-btn" class="ml-auto md:hidden">
+        <button id="menu-btn" class="ml-auto z-30 md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -132,6 +149,7 @@
         </button>
       </div>
     </div>
+
     <!-- nav-extent -->
     <div
       id="nav-extent"
@@ -542,6 +560,106 @@
         </div>
       </div>
     </div>
+
+    <div
+      v-if="linklocation.includes('pricing')"
+      class="
+        container
+        relative
+        px-5
+        mx-auto
+        items-center
+        justify-between
+        h-2.25
+        flex
+        mt-[15px]
+        lg:px-10 lg:w-[1190px]
+      "
+    >
+      <div class="flex relative">
+        <div>
+          <a
+            class="font-bold text-[20px] leading-[25px] text-[#253858]"
+            href="#"
+            >Cloud Security</a
+          >
+        </div>
+        <div class="flex space-x-6 ml-[51px] top-0 bottom-0">
+          <div v-if="this.$i18n.locale === 'en'">
+            <NuxtLink to="/" class="nav-font mr-5">
+              {{ $t('common.features') }}
+            </NuxtLink>
+            <NuxtLink to="/pricing" class="nav-font">
+              {{ $t('common.pricing') }}
+            </NuxtLink>
+          </div>
+          <div v-else>
+            <NuxtLink :to="'/' + this.$i18n.locale" class="nav-font mr-5">
+              {{ $t('common.features') }}
+            </NuxtLink>
+            <NuxtLink
+              :to="'/' + this.$i18n.locale + '/pricing'"
+              class="nav-font"
+            >
+              {{ $t('common.pricing') }}
+            </NuxtLink>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+      <div class="hidden sm:block">
+        <a class="btn" href="#">{{ $t('common.free_trial') }}</a>
+      </div>
+    </div>
+
+    <div
+      v-else
+      class="
+        z-10
+        container
+        relative
+        mx-auto
+        flex
+        items-center
+        justify-between
+        h-2.25
+        mt-[15px]
+        px-5
+        lg:px-10 lg:w-[1190px]
+      "
+    >
+      <div class="flex relative">
+        <a href="#">
+          <img src="../assets/img/cloudsec-logo.svg" alt="" />
+        </a>
+        <div class="flex space-x-6 items-center ml-[55px]">
+          <div v-if="this.$i18n.locale === 'en'">
+            <NuxtLink to="/" class="nav-font-features min-w-fit mr-5">
+              {{ $t('common.features') }}
+            </NuxtLink>
+            <NuxtLink to="/pricing" class="nav-font-features min-w-fit">
+              {{ $t('common.pricing') }}
+            </NuxtLink>
+          </div>
+          <div v-else>
+            <NuxtLink
+              :to="'/' + this.$i18n.locale"
+              class="nav-font-features min-w-fit mr-5"
+            >
+              {{ $t('common.features') }}
+            </NuxtLink>
+            <NuxtLink
+              :to="'/' + this.$i18n.locale + '/pricing'"
+              class="nav-font-features min-w-fit"
+            >
+              {{ $t('common.pricing') }}
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 </template>
 <!--eslint-enable-->
@@ -553,7 +671,6 @@ export default {
       linklocation: '',
     }
   },
-
   mounted() {
     const link = window.location.href
     if (link.includes('pricing')) {

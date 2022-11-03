@@ -1,41 +1,11 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <div class="font-Mulish relative">
-    <!-- Mobile -->
-    <MobileNav @toggleTypeScreen="toggleTypeScreen()"/>
 
     <div id="large-screen"> 
       <!-- navbar -->
-      <NavBar @toggleTypeScreen="toggleTypeScreen()"/>
-
-      <!-- cloud security -->
-      <div
-        class="container relative px-5 mx-auto items-center justify-between h-2.25 flex mt-[15px] lg:px-10 lg:w-[1190px]"
-      >
-        <div class="flex relative">
-          <div>
-            <a
-              class="font-bold text-[20px] leading-[25px] text-[#253858]"
-              href="#"
-              >Cloud Security</a
-            >
-          </div>
-          <div class="flex space-x-6 ml-[51px] top-0 bottom-0">
-            <NuxtLink :to="language + '/'" class="nav-font">
-              {{ $t('common.features') }}
-            </NuxtLink>
-            <NuxtLink :to="language + '/pricing'" class="nav-font">
-              {{ $t('common.pricing') }}
-            </NuxtLink>
-          </div>
-        </div>
-
-        <div class="hidden sm:block">
-          <a class="btn" href="#">{{ $t('common.free_trial') }}</a>
-        </div>
-      </div>
-
-      <!-- Title -->
+      <div>
+        <!-- Title -->
       <div class="container text-center mt-[70px] mx-auto mb-[50px]">
         <h1 class="title">{{ $t('cloud_pricing.title.first') }}</h1>
         <h2 class="font-light text-[18px] leading-[28px] text-[#253858]">
@@ -679,8 +649,7 @@
           <a class="btn1 mx-auto" href="#">{{ $t('common.free_trial') }}</a>
         </div>
       </section>
-
-      <FooterPage linkeng="/pricing" linkvi="/vi/pricing"/>
+      </div>
 
     </div>
   </div>

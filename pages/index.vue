@@ -1,10 +1,9 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  
   <div>
-    <MobileNav @toggleTypeScreen="toggleTypeScreen()"/>
-    <div id="large-screen" class="font-Mulish">
-      <section class="bg-[#353B6B] min-h-[55px] flex relative items-center">
+    <MobileNav v-if="!typeScreen" @toggleTypeScreen="toggleTypeScreen()"/>
+
+    <section v-if="typeScreen" class="bg-[#353B6B] min-h-[55px] flex relative items-center z-10">
         <div class="container mx-auto px-10 w-[1190px] flex">
           <img src="../assets/img/NEW.svg" alt="#" class="mr-[10px]" />
           <p>
@@ -31,9 +30,12 @@
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-      </section>
+    </section>
 
-      <section class="w-full relative mt-[-1px]">
+    <NavBar v-if="typeScreen" @toggleTypeScreen="toggleTypeScreen()"/>
+
+    <div v-if="typeScreen" id="large-screen" class="font-Mulish">
+      <section class="w-full relative mt-[-110px]">
         <img
           src="../assets/img/featurebg.svg"
           alt=""
@@ -45,21 +47,6 @@
           class="object-left h-[600px] object-cover absolute top-[-10px] left-0  md:w-full md:h-full"
         />
         <div class="absolute top-0 w-full">
-
-          <NavBar @toggleTypeScreen="toggleTypeScreen()"/>
-
-          <!-- cloud security -->
-          <div class="z-10 container relative mx-auto flex items-center justify-between h-2.25 mt-[15px] px-5 lg:px-10 lg:w-[1190px]">
-            <div class="flex relative">
-              <a href="#">
-                <img src="../assets/img/cloudsec-logo.svg" alt="" />
-              </a>
-              <div class="flex space-x-6 items-center ml-[55px]">
-                <NuxtLink :to="language + '/'" class="nav-font-features min-w-fit">{{ $t('common.features') }}</NuxtLink>
-                <NuxtLink :to="language + '/pricing'" class="nav-font-features min-w-fit">{{ $t('common.pricing') }}</NuxtLink>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="container mt-[70px] flex px-[40px] inset-0 mx-auto absolute z-0 lg:w-[1190px] md:mt-0">
@@ -318,10 +305,10 @@
           </div>
         </div>
       </section>
-
-      <FooterPage linkeng="/" linkvi="/vi"/>
-
     </div>
+
+    <FooterPage v-if="typeScreen" linkeng="/" linkvi="/vi"/>
+
   </div>
   
 
@@ -346,15 +333,7 @@ export default {
   },
   methods: {
     toggleTypeScreen() {
-      if (this.typeScreen) {
-        this.typeScreen = false;
-        document.getElementById('large-screen').classList.add('hidden')
-        document.getElementById('mobile-nav').classList.remove('hidden')
-      } else {
-        this.typeScreen = true;
-        document.getElementById('large-screen').classList.remove('hidden')
-        document.getElementById('mobile-nav').classList.add('hidden')
-      }
+      this.typeScreen = !this.typeScreen;
     },
     displayQuestion(idElement) {
       const images = document.getElementById(idElement).getElementsByTagName('img');
