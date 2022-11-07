@@ -20,14 +20,14 @@
         </a>
         <ul class="mt-[18px] ml-[20px] space-y-[18px] hidden">
           <li class="extent-h3-mobile-onclick w-fit">
-            What is CyStack Platform?
+            {{ $t('navbar.platform.question1') }}
           </li>
-          <li class="extent-h3-mobile-onclick w-fit">What are the benefits?</li>
-          <li class="extent-h3-mobile-onclick w-fit">Why security platform?</li>
+          <li class="extent-h3-mobile-onclick w-fit">{{ $t('navbar.platform.question2') }}</li>
+          <li class="extent-h3-mobile-onclick w-fit">{{ $t('navbar.platform.question3') }}</li>
           <li class="extent-h3-mobile-onclick w-fit">
-            A look into CyStack Apps
+            {{ $t('navbar.platform.question4') }}
           </li>
-          <li class="extent-h3-mobile-onclick w-fit">FAQ</li>
+          <li class="extent-h3-mobile-onclick w-fit">{{ $t('navbar.platform.question5') }}</li>
         </ul>
       </li>
       <li class="extent-h3-mobile">

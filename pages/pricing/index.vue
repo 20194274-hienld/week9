@@ -662,16 +662,13 @@ export default {
   data() {
     return {
       display: 0,
-      language: '',
       typeScreen: true,
       pathnameUrl: '',
     }
   },
-  mounted() {
-    this.pathnameUrl = window.location.href;
-    if (this.pathnameUrl.includes('vi')) {
-      this.language = '/vi'
-    } else this.language = ''
+  head() {
+    const heads = this.$t('cloud_pricing.head')
+    return heads
   },
   methods: {
     toggleTypeScreen() {

@@ -5,9 +5,9 @@
   
         <NavBar v-if="typeScreen" @toggleTypeScreen="toggleTypeScreen()"/>
   
-        <nuxt-child/>
+        <nuxt-child v-if="typeScreen"/>
 
-        <FooterPage v-if="typeScreen" linkeng="/" linkvi="/vi"/>
+        <FooterPage v-if="typeScreen" />
   
     </div>
     
@@ -21,15 +21,12 @@
       return {
         extentedQuestion: 'none',
         display: 0,
-        language: '',
         typeScreen: true,
       }
     },
-    mounted() {
-      this.pathnameUrl = window.location.href;
-      if (this.pathnameUrl.includes('vi')) {
-        this.language = '/vi'
-      } else this.language = ''
+    head() {
+      const heads = this.$t('cloud_feature.head')
+      return heads
     },
     methods: {
         toggleTypeScreen() {

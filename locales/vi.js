@@ -34,6 +34,15 @@ module.exports = {
         contact: 'Liên hệ',
     },
     cloud_pricing: {
+        head: {
+            title: 'Cloud Security - Pricing',
+            meta: [
+                {
+                    name: 'Mô tả',
+                    content: 'Định giá đơn giản',
+                }
+            ]
+        },
         title: {
             first: 'Dễ dàng dự đoán',
             explain: 'Chi phí hàng tháng rõ ràng',
@@ -86,6 +95,15 @@ module.exports = {
         }
     },
     cloud_feature: {
+        head: {
+            title: 'Cloud Security',
+            meta: [
+                {
+                    name: 'Mô tả',
+                    content: 'Giám sát bảo mật tất cả trong một cho cloud và ứng dụng',
+                }
+            ]
+        },
         vuld_feed: 'Những lỗ hổng mới nhất ảnh hưởng tới website & server mà hệ thống có thể phát hiện',
         view_more: 'Xem thêm',
         paragraph: {

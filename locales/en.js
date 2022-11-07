@@ -34,8 +34,17 @@ module.exports = {
         contact: 'Contact',
     },
     cloud_pricing: {
+        head: {
+            title: 'Cloud Security - Pricing',
+            meta: [
+                {
+                    name: 'description',
+                    content: 'Simple, predictable pricing',
+                }
+            ]
+        },
         nav_mobile: {
-            
+
         },
         title: {
             first: 'Simple, predictable pricing',
@@ -89,6 +98,15 @@ module.exports = {
         }
     },
     cloud_feature: {
+        head: {
+            title: 'Cloud Security',
+            meta: [
+                {
+                    name: 'description',
+                    content: 'All-in-one security monitoring for cloud and applications',
+                }
+            ]
+        },
         vuld_feed: 'The latest vulnerabilities affecting websites & servers that the system can detect',
         view_more: 'View more',
         paragraph: {
@@ -236,7 +254,7 @@ module.exports = {
                 list3: 'Press Release',
                 list4: 'Research',
                 list5: 'Blog',
-                list6 : 'Jobs',
+                list6: 'Jobs',
             },
             para2: {
                 title: 'Customer',

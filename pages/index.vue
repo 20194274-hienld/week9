@@ -39,15 +39,13 @@
         <img
           src="../assets/img/featurebg.svg"
           alt=""
-          class="object-left h-[600px] object-cover top-0 left-0 -z-10 md:w-full md:h-full"
+          class="relative object-left h-[600px] object-cover top-0 left-0 -z-10 md:w-full md:h-full"
         />
         <img
           src="../assets/img/featurebg1.svg"
           alt=""
           class="object-left h-[600px] object-cover absolute top-[-10px] left-0  md:w-full md:h-full"
         />
-        <div class="absolute top-0 w-full">
-        </div>
 
         <div class="container mt-[70px] flex px-[40px] inset-0 mx-auto absolute z-0 lg:w-[1190px] md:mt-0">
           <div class="max-w-[570px] text-[#FFFFFF] self-center">
@@ -307,7 +305,7 @@
       </section>
     </div>
 
-    <FooterPage v-if="typeScreen" linkeng="/" linkvi="/vi"/>
+    <FooterPage v-if="typeScreen"/>
 
   </div>
   
@@ -321,15 +319,12 @@ export default {
     return {
       extentedQuestion: 'none',
       display: 0,
-      language: '',
       typeScreen: true,
     }
   },
-  mounted() {
-    this.pathnameUrl = window.location.href;
-    if (this.pathnameUrl.includes('vi')) {
-      this.language = '/vi'
-    } else this.language = ''
+  head() {
+    const heads = this.$t('cloud_feature.head')
+    return heads
   },
   methods: {
     toggleTypeScreen() {

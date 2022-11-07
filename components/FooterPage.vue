@@ -118,7 +118,6 @@
           class="font-light text-[12px] leading-[15px] text-[#FFFFFF] my-auto"
         >
           Copyright © 2018 CyStack Security. All rights reserved.
-          {{ locale }}
         </div>
       </div>
     </div>
@@ -127,16 +126,6 @@
 
 <script>
 export default {
-  props: {
-    linkeng: {
-      type: String,
-      required: true,
-    },
-    linkvi: {
-      type: String,
-      required: true,
-    },
-  },
   data() {
     return {
       linkPath: '',

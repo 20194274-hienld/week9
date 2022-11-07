@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <nav>
+  <nav class="font-Mulish">
     <div class="container mx-auto px-5 lg:px-10 lg:w-[1190px]">
       <div
         class="
@@ -585,7 +585,7 @@
           >
         </div>
         <div class="flex space-x-6 ml-[51px] top-0 bottom-0">
-          <div v-if="this.$i18n.locale === 'en'">
+          <div v-if="$i18n.locale === 'en'">
             <NuxtLink to="/" class="nav-font mr-5">
               {{ $t('common.features') }}
             </NuxtLink>
@@ -594,11 +594,11 @@
             </NuxtLink>
           </div>
           <div v-else>
-            <NuxtLink :to="'/' + this.$i18n.locale" class="nav-font mr-5">
+            <NuxtLink :to="'/' + $i18n.locale" class="nav-font mr-5">
               {{ $t('common.features') }}
             </NuxtLink>
             <NuxtLink
-              :to="'/' + this.$i18n.locale + '/pricing'"
+              :to="'/' + $i18n.locale + '/pricing'"
               class="nav-font"
             >
               {{ $t('common.pricing') }}
@@ -635,7 +635,7 @@
           <img src="../assets/img/cloudsec-logo.svg" alt="" />
         </a>
         <div class="flex space-x-6 items-center ml-[55px]">
-          <div v-if="this.$i18n.locale === 'en'">
+          <div v-if="$i18n.locale === 'en'">
             <NuxtLink to="/" class="nav-font-features min-w-fit mr-5">
               {{ $t('common.features') }}
             </NuxtLink>
@@ -645,13 +645,13 @@
           </div>
           <div v-else>
             <NuxtLink
-              :to="'/' + this.$i18n.locale"
+              :to="'/' + $i18n.locale"
               class="nav-font-features min-w-fit mr-5"
             >
               {{ $t('common.features') }}
             </NuxtLink>
             <NuxtLink
-              :to="'/' + this.$i18n.locale + '/pricing'"
+              :to="'/' + $i18n.locale + '/pricing'"
               class="nav-font-features min-w-fit"
             >
               {{ $t('common.pricing') }}
